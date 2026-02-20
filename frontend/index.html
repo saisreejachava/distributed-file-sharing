@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwarmScope | P2P Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Distributed File Sharing</p>
+        <h1>SwarmScope Control Deck</h1>
+        <p id="file-meta" class="subhead">Loading config...</p>
+      </header>
+
+      <section class="overview" aria-label="Swarm Overview">
+        <article class="metric">
+          <span class="metric-label">Peers Online</span>
+          <strong id="metric-peer-count">0</strong>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Completed</span>
+          <strong id="metric-complete">0</strong>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Pieces Per File</span>
+          <strong id="metric-piece-count">0</strong>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Last Update</span>
+          <strong id="metric-updated">-</strong>
+        </article>
+      </section>
+
+      <section class="layout">
+        <div>
+          <h2>Peer States</h2>
+          <div id="peer-grid" class="peer-grid"></div>
+        </div>
+
+        <aside class="log-panel">
+          <div class="log-panel-head">
+            <h2>Live Logs</h2>
+            <label>
+              Peer
+              <select id="log-peer-select"></select>
+            </label>
+          </div>
+          <pre id="log-output">Waiting for peer logs...</pre>
+        </aside>
+      </section>
+    </main>
+
+    <template id="peer-card-template">
+      <article class="peer-card">
+        <div class="peer-head">
+          <div>
+            <h3 class="peer-title"></h3>
+            <p class="peer-host"></p>
+          </div>
+          <span class="badge"></span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-track">
+            <div class="progress-fill"></div>
+          </div>
+          <p class="progress-text"></p>
+        </div>
+
+        <dl class="peer-meta">
+          <div><dt>Last Piece</dt><dd class="last-piece">-</dd></div>
+          <div><dt>Preferred</dt><dd class="preferred">-</dd></div>
+          <div><dt>Optimistic</dt><dd class="optimistic">-</dd></div>
+        </dl>
+
+        <p class="activity"></p>
+      </article>
+    </template>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

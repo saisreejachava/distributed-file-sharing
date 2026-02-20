@@ -1,0 +1,13 @@
+{
+  "file_name": "shared.bin",
+  "file_size": 1048576,
+  "piece_size": 32768,
+  "num_preferred_neighbors": 2,
+  "unchoking_interval": 10,
+  "optimistic_unchoking_interval": 30,
+  "peers": [
+    { "id": 1001, "host": "127.0.0.1", "port": 5001, "has_file": true },
+    { "id": 1002, "host": "127.0.0.1", "port": 5002, "has_file": false },
+    { "id": 1003, "host": "127.0.0.1", "port": 5003, "has_file": false }
+  ]
+}
